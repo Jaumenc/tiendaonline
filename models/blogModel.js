@@ -38,23 +38,22 @@ var blogSchema = new mongoose.Schema({
             ref: "User",
         },
     ],
-    images: {
-        type: String,
-        default: "https://expandcart.com/wp-content/uploads/2020/11/blog.png",
-    },
+
     author: {
         type: String,
         default: "Admin",
     },
-}, {
-    toJSON: {
-        virtuals:true,
+    images: [],
     },
-    toObject: {
-        virtuals:true,
-    },
-    timestamps:true,
-});
+    {
+        toJSON: {
+            virtuals: true,
+        },
+        toObject: {
+            virtuals: true,
+        },
+        timestamps: true,
+    });
 
 //Export the model
 module.exports = mongoose.model("Blog", blogSchema);
